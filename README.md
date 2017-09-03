@@ -11,7 +11,7 @@ $ npm install webpack-extract-css-hot-reload --save-dev
 ```
 ### Usage
 
-Update your `webpack.config.js`. For example
+Update your `webpack.config.ts`. For example
 
 ```typescript
 module: {
@@ -38,10 +38,6 @@ index.html
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-    <title>Example title</title>
-
     <!-- Roboto font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
@@ -49,11 +45,8 @@ index.html
     <!-- This stylesheet needs to hot reload -->
     <link rel="stylesheet" href="build/styles.css" data-hot>
   </head>
-
   <body>
-    <div id="root" />
-
-    <script type="text/javascript" src="build/bundle.js"></script>
+    ...
   </body>
 </html>
 ```

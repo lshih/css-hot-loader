@@ -1,7 +1,7 @@
 function reloadStyles(options) {
-  const elements = document.querySelectorAll(`link[${options.selector}]`);
+  var elements = document.querySelectorAll('link[' + options.selector + ']');
 
-  for (let i = 0; i < elements.length; i++) {
+  for (var i = 0; i < elements.length; i++) {
     try {
       reloadStyle(elements[i]);
     } catch (e) {
@@ -11,7 +11,7 @@ function reloadStyles(options) {
 }
 
 function reloadStyle(element) {
-  const newEl = element.cloneNode();
+  var newEl = element.cloneNode();
 
   newEl.addEventListener('load', function () {
     element.remove();
@@ -26,7 +26,7 @@ function getReloadUrl(href) {
     return '';
   }
 
-  const strippedUrl = stripUrl(href);
+  var strippedUrl = stripUrl(href);
 
   return generateReloadUrl(strippedUrl);
 }
@@ -37,10 +37,10 @@ function stripUrl(url) {
     return '';
   }
 
-  const matches = url.match(/[&?][0-9]+$/i);
+  var matches = url.match(/[&?][0-9]+$/i);
 
   if (matches) {
-    const match = matches[0];
+    var match = matches[0];
 
     return url.slice(0, -match.length);
   }
@@ -53,9 +53,9 @@ function generateReloadUrl(url) {
     return '';
   }
 
-  const connector = url.indexOf('?') !== -1 ? '&' : '?';
+  var connector = url.indexOf('?') !== -1 ? '&' : '?';
 
-  return `${url}${connector}${Date.now()}`;
+  return url + connector + Date.now();
 }
 
 module.exports = function (moduleId, options) {

@@ -1,6 +1,6 @@
 {
   "name": "webpack-extract-css-hot-reload",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "CSS hot reload for extract-text-webpack-plugin",
   "main": "index.js",
   "scripts": {},
