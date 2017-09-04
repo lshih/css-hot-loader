@@ -24,7 +24,7 @@ module: {
         }, {
           loader: 'postcss-loader',
         },
-      ] as string[]),
+      ]) as any),
     },
   ]
 }
